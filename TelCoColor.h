@@ -7,9 +7,7 @@ namespace TelCoColorCoder
     const char* MajorColorNames[] = {
         "White", "Red", "Black", "Yellow", "Violet"
     };
-   
-
-    int numberOfMajorColors =
+   int numberOfMajorColors =
         sizeof(MajorColorNames) / sizeof(MajorColorNames[0]);
 
     const char* MinorColorNames[] = {
@@ -17,7 +15,6 @@ namespace TelCoColorCoder
     };
     int numberOfMinorColors =
         sizeof(MinorColorNames) / sizeof(MinorColorNames[0]);
-
     class ColorPair {
         private:
             MajorColor majorColor;
@@ -39,8 +36,7 @@ namespace TelCoColorCoder
                 return colorPairStr;
             }
     };
-
-    ColorPair GetColorFromPairNumber(int pairNumber) {
+ColorPair GetColorFromPairNumber(int pairNumber) {
         int zeroBasedPairNumber = pairNumber - 1;
         MajorColor majorColor = 
             (MajorColor)(zeroBasedPairNumber / numberOfMinorColors);
