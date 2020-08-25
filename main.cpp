@@ -22,13 +22,20 @@ void testPairToNumber(
     std::cout << "Got pair number " << pairNumber << std::endl;
     assert(pairNumber == expectedPairNumber);
 }
-
+void tostring(){
+     for(int pairno=1;pairno<=25;pairno++)
+     {
+        TelCoColorCoder::ColorPair colorPair =
+        TelCoColorCoder::GetColorFromPairNumber(pairno);
+       std:: cout<<pairno<<" "<<colorPair.ToString()<<std::endl;
+     }
 int main() {
     testNumberToPair(4, TelCoColorCoder::WHITE, TelCoColorCoder::BROWN);
     testNumberToPair(5, TelCoColorCoder::WHITE, TelCoColorCoder::SLATE);
 
     testPairToNumber(TelCoColorCoder::BLACK, TelCoColorCoder::ORANGE, 12);
     testPairToNumber(TelCoColorCoder::VIOLET, TelCoColorCoder::SLATE, 25);
+    tostring();
 
     return 0;
 }
