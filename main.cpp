@@ -23,6 +23,7 @@ void testPairToNumber(
 void printmanual()
  {
      int pairno=1;
+    std:: cout<<"Reference Manual"<<std::endl;
     for(int no_of_majorcolors=0;no_of_majorcolors<TelCoColorCoder::numberOfMajorColors;no_of_majorcolors++ )
     {
         for(int no_of_minorcolors=0;no_of_minorcolors<TelCoColorCoder::numberOfMinorColors;no_of_minorcolors++ )
