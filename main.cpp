@@ -1,7 +1,6 @@
 #include <iostream>
 #include <assert.h>
 #include "TelCoColor.h"
-
 void testNumberToPair(int pairNumber,
     TelCoColorCoder::MajorColor expectedMajor,
     TelCoColorCoder::MinorColor expectedMinor)
@@ -12,7 +11,6 @@ void testNumberToPair(int pairNumber,
     assert(colorPair.getMajor() == expectedMajor);
     assert(colorPair.getMinor() == expectedMinor);
 }
-
 void testPairToNumber(
     TelCoColorCoder::MajorColor major,
     TelCoColorCoder::MinorColor minor,
@@ -22,21 +20,27 @@ void testPairToNumber(
     std::cout << "Got pair number " << pairNumber << std::endl;
     assert(pairNumber == expectedPairNumber);
 }
-void tostring(){
-     for(int pairno=1;pairno<=25;pairno++)
-     {
-        TelCoColorCoder::ColorPair colorPair =
-        TelCoColorCoder::GetColorFromPairNumber(pairno);
-       std:: cout<<pairno<<" "<<colorPair.ToString()<<std::endl;
-     }
-}
+void printmanual()
+ {
+     int pairno=1;
+    for(int no_of_majorcolors=0;no_of_majorcolors<TelCoColorCoder::numberOfMajorColors;no_of_majorcolors++ )
+    {
+        for(int no_of_minorcolors=0;no_of_minorcolors<TelCoColorCoder::numberOfMinorColors;no_of_minorcolors++ )
+        {
+            TelCoColorCoder::ColorPair colorPair =
+            TelCoColorCoder::GetColorFromPairNumber(pairno);
+            std:: cout<<pairno<<" "<<colorPair.ToString()<<std::endl;
+            pairno++;
+        }
+    }
+ }
 int main() {
     testNumberToPair(4, TelCoColorCoder::WHITE, TelCoColorCoder::BROWN);
     testNumberToPair(5, TelCoColorCoder::WHITE, TelCoColorCoder::SLATE);
 
     testPairToNumber(TelCoColorCoder::BLACK, TelCoColorCoder::ORANGE, 12);
     testPairToNumber(TelCoColorCoder::VIOLET, TelCoColorCoder::SLATE, 25);
-    tostring();
+    printmanual();
 
     return 0;
 }
