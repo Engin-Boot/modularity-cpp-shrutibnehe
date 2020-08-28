@@ -20,20 +20,17 @@ void testPairToNumber(
     std::cout << "Got pair number " << pairNumber << std::endl;
     assert(pairNumber == expectedPairNumber);
 }
+
 void printmanual()
  {
-     int pairno=1;
     std:: cout<<"Reference Manual"<<std::endl;
-    for(int no_of_majorcolors=0;no_of_majorcolors<TelCoColorCoder::numberOfMajorColors;no_of_majorcolors++ )
+    int totalpairs=TelCoColorCoder::numberOfMajorColors*TelCoColorCoder::numberOfMinorColors;
+    for(int pairno=1;pairno<=totalpairs;pairno++)
     {
-        for(int no_of_minorcolors=0;no_of_minorcolors<TelCoColorCoder::numberOfMinorColors;no_of_minorcolors++ )
-        {
             TelCoColorCoder::ColorPair colorPair =
             TelCoColorCoder::GetColorFromPairNumber(pairno);
             std:: cout<<pairno<<" "<<colorPair.ToString()<<std::endl;
-            pairno++;
-        }
-    }
+     }   
  }
 int main() {
     testNumberToPair(4, TelCoColorCoder::WHITE, TelCoColorCoder::BROWN);
